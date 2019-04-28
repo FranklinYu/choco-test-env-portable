@@ -27,6 +27,7 @@ Vagrant.configure('2') do |config|
     config.vm.network 'public_network', bridge: ENV['VAGRANT_DEFAULT_SWITCH']
   end
 
+  config.vm.provision 'file', source: 'PowerShell.bat', destination: '$HOME/Desktop'
   config.vm.provision 'shell', path: 'provision.ps1', privileged: false
 
 end
